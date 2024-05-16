@@ -1,4 +1,4 @@
-def josephus(items, k) -> list:
+def permute(items, k) -> list:
     arr = []
     runs = len(items)
     spot = k - 1
