@@ -28,6 +28,7 @@ def eight(func=None, *num):
 def nine(func=None, *num): 
     return func(9, *num) if func else 9
 
+# writing arithmatic function definitions
 def plus(num): return lambda x: x + num
 def minus(num): return lambda x: x - num
 def times(num): return lambda x: x * num

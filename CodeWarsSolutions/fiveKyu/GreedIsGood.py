@@ -1,9 +1,9 @@
+from collections import Counter
+
 def score(dice):
-    from collections import Counter
-    
     total = 0
     tally = Counter(dice)
-    
+    # iterate through keys, add to total
     for item in tally.keys():
         while tally[item] >= 3:
             if item == 1:
