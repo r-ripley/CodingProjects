@@ -9,6 +9,7 @@ def format_duration(time):
     if time == 0:
         return "now"
     else:
+        # time conversions
         years = time // 31536000
         days = (time - years * 31536000) // 86400
         hours = (time - years * 31536000 - days * 86400) // 3600
@@ -27,12 +28,14 @@ def format_duration(time):
             return f'{value} ' + time + 's'
         elif value == 1:
             return f'{value} ' + time
-        
+    
+    # create a list to add each time value
     timeTracker = []
     for item in timeDict:
         if timeDict[item] > 0:
             timeTracker.append([item, timeDict[item]])
-            
+    
+    # write out expanded time string, add to string each time through loop
     for item in timeTracker:
         count += 1
         if len(timeTracker) == 1:

@@ -30,10 +30,14 @@ class Warrior:
                  8: "Champion",
                  9: "Master",
                  10: "Greatest"}
+        
+        # add achievements if battle is won
         if self.level >= battleInfo[2]:
             self.experience += battleInfo[1]
+            # set experiece back if it is capped
             if self.experience > 10000:
                 self.experience = 10000
+            # reduce experience and add to level
             self.level = math.floor(self.experience / 100)
             self.rank = ranks[int(self.level / 10)]
             self.achievements.append(battleInfo[0])
@@ -56,6 +60,7 @@ class Warrior:
         if enemyLevel < 1 or enemyLevel > 100:
             return "Invalid level"
         else:
+            # various edge cases for beating enemy combatants
             if enemyLevel - self.level >= 5 and int(enemyLevel / 10) - int(self.level / 10) >= 1:
                 return "You've been defeated"
             if self.level == enemyLevel:
