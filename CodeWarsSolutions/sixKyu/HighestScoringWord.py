@@ -1,4 +1,5 @@
 def high(x):
+    # create a dictionary and add each word to it paired with their values according to ascii
     values = {}
     for word in x.split(" "):
         total = 0

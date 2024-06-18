@@ -1,6 +1,7 @@
 def count_smileys(arr):
     count = 0
     
+    # iterate through array and count each possible smiley
     for item in arr:
         if len(item) == 2:
             if (item[0] == ':' or item[0] == ';') and (item[1] == ')' or item[1] == 'D'):
